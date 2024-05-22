@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+   <script>
+       function onClick() {
+           let fname = document.getElementById('fname').value;
+           let lname = document.getElementById('lname').value;
+           if (!fname || !lname) {
+               document.getElementById('errorMessage').innerHTML = 'Please type full name';
+               document.getElementById('fullName').innerHTML = ''
+               return;
+           }
+             document.getElementById('fullName').innerHTML = fname + ' ' +lname;
+       }
+
+
+       function onReset() {
+           document.getElementById('fname').value = '';
+           document.getElementById('lname').value = '';
+           document.getElementById('fullName').innerHTML = ''
+       }
+   </script>
+</head>
+
+
+<body>
+   <h2>HTML Forms</h2>
+   <div>
+       <label for="fname">First name:</label><br>
+       <input type="text" id="fname" name="fname" value="John"> <br>
+       <label for="lname">Last name:</label><br>
+       <input type="text" id="lname" name="lname" value="Doe"><br><br>
+       <button id='submit-button' onclick="onClick()">Submit</button>
+       <button id='reset-button' onclick="onReset()">Reset</button>
+
+
+   </div>
+   <p id='fullName'></p>
+   <p id='errorMessage'></p>
+</body>
+
+
+</html>
 
